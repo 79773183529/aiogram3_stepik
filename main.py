@@ -1,16 +1,12 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import requests
+import pprint
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hello, {name}!!!!!!!!!!!!!')  # Press Ctrl+F8 to toggle the breakpoint.
+api_url = ' http://numbersapi.com/43'
 
+response = requests.get(api_url)   # Отправляем GET-запрос и сохраняем ответ в переменной response
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if response.status_code == 200:    # Если код ответа на запрос - 200, то смотрим, что пришло в ответе
+    print(response.text)
+else:
+    print(response.status_code)    # При другом коде ответа выводим этот код
