@@ -1,4 +1,8 @@
 venv/
 .idea/
 .gitignore
+.env
+test.py
+
+
 
